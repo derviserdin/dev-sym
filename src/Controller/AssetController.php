@@ -9,6 +9,8 @@ use Symfony\Component\Routing\Annotation\Route;
 class AssetController extends AbstractController
 {
 
+    #bu github example için
+
     /**
      * @Route("/asset_kontrol", name="asset_kontrol")
      * @return Response
