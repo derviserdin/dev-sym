@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello!{% endblock %}
+
+{% block body %}
+    Merhaba Ben asset sayfası
+{% endblock %}
+
+{% block javascripts %}
+
+    {{ parent() }}
+    <script src="{{ asset('js/custom.js') }}"></script>
+{% endblock %}

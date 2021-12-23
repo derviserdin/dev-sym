@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello IndexController!{% endblock %}
+
+{% block body %}
+    {% for gorev in gorevler %}
+        {{ gorev.gorev }} |
+        <form action="{{ path('gorev-sil',{id:gorev.id}) }}" method="post">
+            <input name="token" type="hidden" value="{{ csrf_token('gorev-sil') }}" >
+            <button type="submit">Sil</button>
+        </form>
+        <hr>
+
+    {% endfor %}
+
+    <a href="{{ path('yeni_gorev') }}">Yeni</a>
+{% endblock %}

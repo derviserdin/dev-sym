@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    Test Body<br>
+    {% include "template-tags/include-me.html.twig" %}<br>
+
+{% endblock %}
+
+{% block name %}
+    Derviş
+{% endblock %}
+
+{% block for_test %}
+    {% for sehir in sehirler %}
+        {{ sehir }}<br>
+        <hr>
+    {% endfor %}
+{% endblock %}
+
+{% block if_test %}
+
+    {% if ifVar %}
+        True
+    {% else %}
+        False
+    {% endif %}
+    <br>
+    {% if definedCeck is defined %}
+        <br>
+        definedCeck:defined
+    {% else %}
+        definedCeck:not defined
+    {% endif %}
+    <br>
+    <br>
+    {% if emptyCheck is empty %}
+        <br>
+        emptyCheck:empty
+    {% else %}
+        emptyCheck: not Empty
+    {% endif %}
+    <br>
+    {% if nullCheck is null %}
+        <br>
+        nullCheck:null
+    {% else %}
+        nullCheck: not null
+    {% endif %}
+    <br>
+    {% if 10 is even %}
+        <br>
+        even:çift
+    {% else %}
+        hayır tek
+    {% endif %}
+    <br>
+    {% if iterableCheck is iterable %}
+        <br>
+        iterableCheck is iterable
+    {% else %}
+        iterableCheck is not iterable
+    {% endif %}
+
+
+
+{% endblock %}
+
+{% block set_test %}
+       <hr>
+       {% set isim= 'Üveys' %}
+        {{ isim }}
+
+
+
+    {% apply spaceless %}
+        <div>
+            <strong>foo</strong>
+        </div>
+    {% endapply %}
+{% endblock %}

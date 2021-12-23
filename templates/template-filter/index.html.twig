@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <hr>
+    {# abs negatif sayıların öündeki "-" işaretini kaldırır#}
+    {{ negativeVar|abs }}
+    <hr>
+    {# capitalize gelen değerin baş harfini büyük yapar #}
+    {{ sentece|capitalize }}
+    <hr>
+    {# tarih objesini yazdırmaya yarar #}
+    {{bugun|date('M D Y') }}
+    <hr>
+    {#dizideki ilk elemanı yazdırır  #}
+    {{ sehirler|first }}
+    <hr>
+    {#dizideki elemanların arasına istediğin işareti koyar  #}
+    {{ sehirler|join('-') }}
+    <hr>
+    {#dizideki elemanların anahtar değerlerini yazdırır  #}
+    {{ sehirler|keys|join(',') }}
+    <hr>
+    {#dizideki ilk son yazdırır  #}
+    {{ sehirler|last }}
+    <hr>
+    {#dizideki eleman sayısını verir #}
+    {{ sehirler|length }}
+    <hr>
+    {#lover harfleri küçük yapar#}
+    {{ sentece|lower }}
+    <hr>
+    {#dizileri birleştirmeye yarar#}
+    {{ sehirler|merge(['adıyaman'])|join('--') }}
+    {#html kodlarını ekler#}
+    <hr>
+    {{ rawData|raw }}
+
+    {# dizideki elemanları sondan başa dogru sıralar #}
+    <hr>
+    {{ sehirler|reverse|join('--') }}
+    {# dizideki elemanları sondan başa dogru sıralar #}
+    <hr>
+    {{ sehirler|sort|join('--') }}
+    <hr>
+    {#lboşlukları siler#}
+    {{ sentece|trim }}
+    <hr>
+    <hr>
+    {#upper harfleri büyük yapar#}
+    {{ sentece|upper }}
+
+    <hr>
+    {#linkleri encode eder#}
+    {{ 'http://dervis.com?name=derviş'|url_encode }}
+    <hr>
+    {#json encode eder#}
+    {{ sehirler|json_encode }}
+{% endblock %}
